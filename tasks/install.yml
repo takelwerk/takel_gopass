@@ -1,12 +1,12 @@
 ---
 - name: (install) install deb packages
-  apt:
+  ansible.builtin.apt:
     name: "{{ takel_gopass_deb_install_packages }}"
     state: present
     update_cache: true
 
 - name: (install) copy pass template
-  template:
+  ansible.builtin.template:
     src: pass.j2
     dest: /usr/local/bin/pass
     owner: root
